@@ -1,5 +1,6 @@
 var _typeArr="",
     map="",
+    apiHost = "http://146.148.14.122:8080"
 //文字标签
     title=document.createElement("label"),
     stepLabel=document.createElement("label"),
@@ -59,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function(){
     inputDialog.style.visibility="hidden";
     glassBg.style.visibility="hidden";
     loading.style.visibility="hidden";
-    console.log('shit')
 }, false);
 
 function outputUpdate() {
@@ -101,7 +101,7 @@ function postLevel(ln,st){
             loading.style.visibility = "visible";
         }
     };
-    xmlhttp.open("POST","/s/json?func=postLevel",true);
+    xmlhttp.open("POST", apiHost + "/s/json?func=postLevel",true);
     xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
     xmlhttp.send(data);
     // afterInsert(nameInput.value,stepInput.value);
